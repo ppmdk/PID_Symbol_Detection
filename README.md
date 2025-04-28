@@ -1,71 +1,91 @@
 # PID_Symbol_Detection
 
-### Insrtructions to run
-1. setup a virtual environment
+## Installation and Setup
 
-```bash
-python3 -m venv .venv 
-```
-Activate it
-```bash
-source .venv/Scripts/activate
-```
-or
+### 1. Create and Activate Virtual Environment
+
+#### Windows
 ```cmd
+# Create virtual environment
+python -m venv .venv
+
+# Activate virtual environment
 .venv\Scripts\activate
 ```
-### To train and evaluate on custom dataset, use following commands
-2. Training a generic symbol detector (stage-1: clas-agnostic)
-For preparing data
-```python
+
+#### Linux/MacOS
+```bash
+# Create virtual environment
+python3 -m venv .venv
+
+# Activate virtual environment
+source .venv/Scripts/activate
+```
+
+## Usage Guide
+
+### Stage 1: Generic Symbol Detection (Class-Agnostic)
+
+#### Data Preparation
+```bash
 python src/run_pipeline.py stage1 --prepare_data
 ```
-For training model
-```python
+
+#### Model Training
+```bash
 python src/run_pipeline.py stage1 --train_model
 ```
-For both preparing data and training the model
-```python
+
+#### Complete Stage 1 Pipeline (Data Prep + Training)
+```bash
 python src/run_pipeline.py stage1
 ```
-3. Training a symbol classifier (stage-2: few-shot classification)
-For preparing data
-```python
+
+### Stage 2: Symbol Classification (Few-Shot)
+
+#### Data Preparation
+```bash
 python src/run_pipeline.py stage2 --prepare_data
 ```
-For training model
-```python
+
+#### Model Training
+```bash
 python src/run_pipeline.py stage2 --train_model
 ```
-For both preparing data and training the model
-```python
+
+#### Complete Stage 2 Pipeline (Data Prep + Training)
+```bash
 python src/run_pipeline.py stage2
 ```
-4. Inferencing using trained stage 1 model
-```python
-python src/run_pipeline.py stage1_inference
-```
-5. Inferencing using trained stage 2 model for label transfer
-```python
-python src/run_pipeline.py stage1_inference
-```
-6. Compute evaluation metrics
 
-For computing only stage1 metrics
-```python
+### Inference
+
+#### Stage 1 Inference
+```bash
+python src/run_pipeline.py stage1_inference
+```
+
+#### Stage 2 Inference (Label Transfer)
+```bash
+python src/run_pipeline.py stage2_inference
+```
+
+### Evaluation
+
+#### Stage 1 Evaluation
+```bash
 python src/run_inference.py evaluation --evaluate_stage1
 ```
-For computing only stage2 metrics
-```python
+
+#### Stage 2 Evaluation
+```bash
 python src/run_inference.py evaluation --evaluate_stage2
 ```
-For computing both stage1 and stage2 metrics
-```python
+
+#### Complete Evaluation (Both Stages)
+```bash
 python src/run_inference.py evaluation
 ```
-
-
-
 
 ### Proposed Framework vs Conventional Framework
 
