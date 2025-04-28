@@ -87,6 +87,26 @@ python src/run_inference.py evaluation --evaluate_stage2
 python src/run_inference.py evaluation
 ```
 
+### Data Organization
+
+#### Directory Structure
+```
+data/
+├── raw/
+│   ├── images/          # Place your P&ID images here
+│   └── labels_class_aware/  # Place corresponding ground truth labels here
+```
+
+#### Sample Dataset
+The repository includes a sample dataset from the [Dataset-P&ID](https://drive.google.com/drive/u/1/folders/1gMm_YKBZtXB3qUKUpI-LF1HE_MgzwfeR) collection, containing 5 P&ID images and their corresponding labels. This dataset is used for demonstration purposes and originates from the research paper available [here](https://arxiv.org/pdf/2109.03794).
+
+#### Adding Custom Data
+To use your own P&ID images:
+1. Place your images in `data/raw/images/`
+2. Place corresponding ground truth labels in `data/raw/labels_class_aware/`
+3. Ensure labels follow the same format as the sample dataset
+
+
 ### Proposed Framework vs Conventional Framework
 
 <img src="./media/workflow.svg" >
