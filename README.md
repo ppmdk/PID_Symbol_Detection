@@ -37,7 +37,6 @@ Train a model using one labeled image per symbol class (e.g. P&ID legend). The m
 
 <img src="./media/label_transfer.png" width="400">
 
-(will be updated soon...)
 
 If you use this package in your work, please cite it as:
 ```
