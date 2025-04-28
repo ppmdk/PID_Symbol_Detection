@@ -1,3 +1,0 @@
-Stage-2 performs label transfer. It is essentially training a classifier on augmented one-shot dataset and then classify the symbols detected in Stage-1.
-
-The shared file does not have clean code. I was unable to find it. But I strongly feel that the shared file in this folder will give you enough so that you can mmodify it with Stage2_utils.py and build your own script.
