@@ -105,6 +105,7 @@ To use your own P&ID images:
 1. Place your images in `data/raw/images/`
 2. Place corresponding ground truth labels in `data/raw/labels_class_aware/`
 3. Ensure labels follow the same format as the sample dataset
+4. Change `class_aware_class_names` variable in `config.yaml` accordingly
 
 
 ### Proposed Framework vs Conventional Framework
